@@ -107,7 +107,7 @@ nmap --script-trace
 `nmap -Pn -T4 --min-rate 64654354987 10.50.22.27 -p21-24,80,8080 --script=http-robots.txt`
 - will pull (if it exists) the robots.txt file
 
-`nmap -Pn -T4 --min-rate 64654354987 10.50.27.25 -p445,139,135 --script==smb-os-discovery`
+`nmap -Pn -T4 --min-rate 64654354987 10.50.27.25 -p445,139,135 --script=smb-os-discovery`
 - if those ports are open, it will pull info from those ports (windows machine with smb open)
 - confirms it is smb and pulls OS information
 - (you know its a windows machine if 445, 135, 9999, 3389 are open)
