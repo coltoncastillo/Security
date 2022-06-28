@@ -33,3 +33,29 @@ Learn to pair vulnerabilities to exploits
 
 ### Research
 - confidential/Top Secret research isnt always better than open source research
+  - *Intelligence* is processed information, *Information* is just collected info 
+
+### Testing
+- Test and verify for success
+  - testing provides a number of benefits:
+    - faster time to breakout of initial foothold
+    - reduce risk of detection and tool failure
+    - improved recovery times
+    -
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
