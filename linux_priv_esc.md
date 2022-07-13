@@ -78,6 +78,7 @@ Timestomp
 
 
 
+proxychains scp comrade@192.168.28.27:/tmp/10-milli.txt .
 
 
 
