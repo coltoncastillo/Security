@@ -1,3 +1,4 @@
+# *****SHITS VIOLENTLY**** 💯
 ### Host Discovery
 - Narrow the scope 
   - ping sweep (see whats out there maybe cuz huge subnet)
@@ -74,6 +75,39 @@
           - UNION select 1,table_schema,3,table_name,5,column_name from information_schema.columns
             - put the things we wanted in their respective fields and filled in the rest with placeholder numbers
         - UNION select id,name,pass from session.user
+
+### Reverse Engineering / Exploit Development
+- static analysis : file, strings
+- Behavioral analysis: run the file (what normal looks like)
+---
+- find the offset 
+  - gdb, buffer overflow pattern generator 
+- Validate EIP with B
+- crafted exploit
+  - offset
+  - EIP/JMP ESP placeholder
+  - NOP sled
+- generate shellcode
+- find JMP ESP from the **Target Machine's** memory 
+  - `env -gdb <program name>` 
+- replace EIP/JMP ESP placeholder with valid JMP ESP memory address
+- verify exploit
+  - offset
+  - JMP ESP (Big endian to Little endian)
+  - NOP sled
+  - shell code
+  - Does sudo matter? yes. Need to run program as sudo to invoke root privileges
+  
+### Exploiting tings 
+- SUID/SGID
+- cron
+- run-parts
+- "." in path
+- /etc/sudoers
+- sudo -l 
+- GTFObins
+- /var/tmp and/or /tmp/
+
 
 
 
