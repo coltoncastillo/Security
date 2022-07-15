@@ -111,6 +111,10 @@
 
 .
 
+xfreerdp /u:comrade /v:0.0.0.0 /port:32302 /dynamic-resolution +glyph-cache +clipboard
+
+
+
 
 
 
